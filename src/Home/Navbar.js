@@ -16,13 +16,13 @@ const Sidebar = (props) => {
         setIsOpen(newIsOpen);
     }
     return ( 
-        <Navbar color="faded" light expand="md">
-            <NavbarBrand href="/">Rate My Rig</NavbarBrand>
+        <Navbar color="dark" light expand="md">
+            <NavbarBrand className="NavBrand" style={{color: "lightgreen"}} href="/">Rate My Rig</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <Button onClick={props.clickLogout}>Logout</Button>
+                        <Button style={{color: "lightgreen"}} onClick={props.clickLogout}>Logout</Button>
                     </NavItem>
                 </Nav>
             </Collapse>
