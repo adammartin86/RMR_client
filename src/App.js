@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './Home/Navbar';
 import Auth from './Auth/Auth';
+import BuildIndex from './Builds/BuildIndex';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       setSessionToken(localStorage.getItem('token'));
     }
   }, [])
@@ -17,10 +18,20 @@ function App() {
     console.log(sessionToken);
   }
 
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
+  const protectedViews = () => {
+    return (sessionToken === localStorage.getItem('token') ? <BuildIndex token={sessionToken} />
+      : <Auth updateToken={updateToken} />)
+  }
+
   return (
     <div >
-      <Sidebar/>
-      <Auth/>
+      <Sidebar clickLogout={clearToken} />
+      {protectedViews()}
     </div>
   );
 }
