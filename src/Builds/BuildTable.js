@@ -1,56 +1,47 @@
 import React from 'react';
-import {Table, Button} from 'reactstrap';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, Button
+} from 'reactstrap';
 
 const BuildTable = (props) => {
     const deleteBuild = (build) => {
         fetch(`http://localhost:3000/build/delete/${build.id}`, {
-            method: "DELETE",   
+            method: "DELETE",
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
         })
-        .then(() => props.fetchBuilds())
+            .then(() => props.fetchBuilds())
     }
-    const buildMapper =() => {
-        return props.build.map((build, index) =>{
-            return(
-                <tr key={index}>
-                    <th scope="row">{build.id}</th>
-                    <td>{build.motherboard}</td>
-                    <td>{build.cpu}</td>
-                    <td>{build.gpu}</td>
-                    <td>{build.ram}</td>
-                    <td>{build.pc_case}</td>
-                    <td>
-                        <Button color="warning" onClick={() => {props.editUpdateBuild(build); props.updateOn()}} >Update specs</Button>
-                        <Button color="danger" onClick={()=> deleteBuild(build)}>Delete Rig</Button>
-                    </td>
-                </tr>
+    const buildMapper = () => {
+        return props.build.map((build) => {
+            return (
+                <div>
+                    <Card>
+                        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+                        <CardBody>
+                            <CardTitle>Card title</CardTitle>
+                            <CardText>{build.motherboard},{build.cpu},{build.gpu}, {build.ram}, {build.pc_case} </CardText>
+                            <Button color="warning" onClick={() => { props.editUpdateBuild(build); props.updateOn() }} >Update specs</Button>
+                            &nbsp;
+                         <Button color="danger" onClick={() => deleteBuild(build)}>Delete Rig</Button>
+                        </CardBody>
+                    </Card>
+                </div>
             )
         })
     }
-    return ( 
+    return (
         <>
-        <h3>User Builds</h3>
-        <hr/>
-        <Table striped>
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th>Motherboard</th>
-                    <th>CPU</th>
-                    <th>GPU</th>
-                    <th>RAM</th>
-                    <th>Case</th>
-                </tr>
-            </thead>
-            <tbody>
-                {buildMapper()}
-            </tbody>
-        </Table>
+        <Button className="right-align" color="primary" onClick={() => { props.createOn() }} >Build your rig!</Button>
+            <h3>User Builds</h3>
+            <hr />
+            {buildMapper()}
+
         </>
-     );
+    );
 }
- 
+
 export default BuildTable;

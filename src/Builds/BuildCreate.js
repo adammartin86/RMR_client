@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalHeader } from 'reactstrap';
 
 const BuildCreate = (props) => {
     const [motherboard, setMotherboard] = useState('');
@@ -27,13 +27,16 @@ const BuildCreate = (props) => {
                 setRam('');
                 setPc_case('')
                 props.fetchBuilds();
+                props.createOff();
             })
     }
 
 
     return (
         <>
-            <h3>Share your specs!</h3>
+         <Modal isOpen={true}>
+            <ModalHeader>Build your Rig!</ModalHeader>
+            <ModalBody>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="motherboard" />
@@ -57,6 +60,8 @@ const BuildCreate = (props) => {
                 </FormGroup>
                 <Button type="submit">Build your rig!</Button>
             </Form>
+            </ModalBody>
+        </Modal>
         </>
     );
 }

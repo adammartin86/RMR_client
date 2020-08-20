@@ -15,3 +15,23 @@ code {
 .NavBrand{
   font-family: 'OCR A Std', monospace;
 }
+
+.nav-tabs {
+  padding: 20px 0 0 0;
+}
+
+.tab-content{
+  padding-top: 20px;
+}
+
+.right-align{
+  float: right;
+}
+
+.container{
+  padding-top: 20px;
+}
+
+.navbar.bg-dark {
+  background-color: rgba(52,58,64,0.8) !important;
+}

@@ -27,7 +27,7 @@ const BuildEdit = (props) => {
     }
     return (
         <Modal isOpen={true}>
-            <ModalHeader>Build your Rig</ModalHeader>
+            <ModalHeader>Edit your Rig</ModalHeader>
             <ModalBody>
                 <Form onSubmit={buildUpdate}>
                     <FormGroup>
