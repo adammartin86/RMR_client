@@ -7,12 +7,13 @@ const BuildEdit = (props) => {
     const [editGpu, setGpuEdit] = useState(props.buildToUpdate.gpu);
     const [editRam, setRamEdit] = useState(props.buildToUpdate.ram);
     const [editPc_case, setPc_caseEdit] = useState(props.buildToUpdate.pc_case);
+    const [editUrl, setUrl] = useState(props.buildToUpdate.url);
 
     const buildUpdate = (event) => {
         event.preventDefault();
         fetch(`http://localhost:3000/build/update/${props.buildToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({ build: { motherboard: editMotherboard, cpu: editCpu, gpu: editGpu, ram: editRam, pc_case: editPc_case } }),
+            body: JSON.stringify({ build: { motherboard: editMotherboard, cpu: editCpu, gpu: editGpu, ram: editRam, pc_case: editPc_case, url: editUrl } }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
@@ -49,6 +50,10 @@ const BuildEdit = (props) => {
                     <FormGroup>
                         <Label htmlFor="pc_case">Edit Case</Label>
                         <Input name="pc_case" value={editPc_case} onChange={(e) => setPc_caseEdit(e.target.value)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor="url">Edit Image</Label>
+                        <Input name="url" value={editUrl} onChange={(e) => setUrl(e.target.value)}/>
                     </FormGroup>
                     <Button type="submit">Update Specs!</Button>
                 </Form>

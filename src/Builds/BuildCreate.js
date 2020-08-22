@@ -7,13 +7,14 @@ const BuildCreate = (props) => {
     const [gpu, setGpu] = useState('');
     const [ram, setRam] = useState('');
     const [pc_case, setPc_case] = useState('');
+    const [url, setUrl] =useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(props.token);
         fetch('http://localhost:3000/build/create', {
             method: 'POST',
-            body: JSON.stringify({ build: { motherboard: motherboard, cpu: cpu, gpu: gpu, ram: ram, pc_case: pc_case } }),
+            body: JSON.stringify({ build: { motherboard: motherboard, cpu: cpu, gpu: gpu, ram: ram, pc_case: pc_case, url: url } }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
@@ -26,6 +27,7 @@ const BuildCreate = (props) => {
                 setGpu('');
                 setRam('');
                 setPc_case('')
+                setUrl('');
                 props.fetchBuilds();
                 props.createOff();
             })
@@ -57,6 +59,10 @@ const BuildCreate = (props) => {
                 <FormGroup>
                     <Label htmlFor="pc_case" />
                     <Input placeholder="Case" name="pc_case" value={pc_case} onChange={(e) => setPc_case(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor="url"/>
+                    <Input placeholder="URL" name="url" value={url} onChange={(e) => setUrl(e.target.value)}/>
                 </FormGroup>
                 <Button type="submit">Build your rig!</Button>
             </Form>

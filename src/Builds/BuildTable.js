@@ -18,12 +18,12 @@ const BuildTable = (props) => {
     const buildMapper = () => {
         return props.build.map((build) => {
             return (
-                <div>
-                    <Card>
-                        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+                <div classname="card-table">
+                    <Card top width="100%">
+                        <CardImg top width="100%" src={build.url} alt="Card image cap" />
                         <CardBody>
-                            <CardTitle>Card title</CardTitle>
-                            <CardText>{build.motherboard},{build.cpu},{build.gpu}, {build.ram}, {build.pc_case} </CardText>
+                            <CardTitle></CardTitle>
+                            <CardText>Motherboard: {build.motherboard}, CPU: {build.cpu}, GPU: {build.gpu}, RAM: {build.ram}, Case: {build.pc_case},</CardText>
                             <Button color="warning" onClick={() => { props.editUpdateBuild(build); props.updateOn() }} >Update specs</Button>
                             &nbsp;
                          <Button color="danger" onClick={() => deleteBuild(build)}>Delete Rig</Button>

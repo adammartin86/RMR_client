@@ -35,3 +35,13 @@ code {
 .navbar.bg-dark {
   background-color: rgba(52,58,64,0.8) !important;
 }
+
+.card{
+  text-align: center;
+  width: 500px;
+  height: 700px;
+}
+
+.card-table{
+  min-width: 50px;
+}
