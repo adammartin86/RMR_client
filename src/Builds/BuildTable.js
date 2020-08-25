@@ -3,10 +3,11 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, Button
 } from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const BuildTable = (props) => {
     const deleteBuild = (build) => {
-        fetch(`http://localhost:3000/build/delete/${build.id}`, {
+        fetch(`${APIURL}/build/delete/${build.id}`, {
             method: "DELETE",
             headers: new Headers({
                 'Content-Type': 'application/json',

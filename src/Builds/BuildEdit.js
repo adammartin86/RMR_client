@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const BuildEdit = (props) => {
     const [editMotherboard, setMotherboardEdit] = useState(props.buildToUpdate.motherboard);
@@ -11,7 +12,7 @@ const BuildEdit = (props) => {
 
     const buildUpdate = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/build/update/${props.buildToUpdate.id}`, {
+        fetch(`${APIURL}/build/update/${props.buildToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({ build: { motherboard: editMotherboard, cpu: editCpu, gpu: editGpu, ram: editRam, pc_case: editPc_case, url: editUrl } }),
             headers: new Headers({

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalBody, ModalHeader } from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const BuildCreate = (props) => {
     const [motherboard, setMotherboard] = useState('');
@@ -12,7 +13,7 @@ const BuildCreate = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(props.token);
-        fetch('http://localhost:3000/build/create', {
+        fetch(`${APIURL}/build/create`, {
             method: 'POST',
             body: JSON.stringify({ build: { motherboard: motherboard, cpu: cpu, gpu: gpu, ram: ram, pc_case: pc_case, url: url } }),
             headers: new Headers({

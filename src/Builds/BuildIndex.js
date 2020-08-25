@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'reactstrap';
 import BuildCreate from './BuildCreate';
 import BuildTable from './BuildTable';
 import BuildEdit from './BuildEdit';
+import APIURL from '../helpers/environment';
 
 const BuildIndex = (props) => {
     const [build, setBuild] = useState([]);
@@ -11,7 +12,7 @@ const BuildIndex = (props) => {
     const [createActive, setCreateActive] = useState(false);
 
     const fetchBuilds = () => {
-        fetch('http://localhost:3000/build/', {
+        fetch(`${APIURL}/build/`, {
             method: 'GET',
             headers: new Headers({
                 'Content-type': 'application/json',
