@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div >
+    <div className="container" >
       <Sidebar clickLogout={clearToken} />
       {protectedViews()}
     </div>

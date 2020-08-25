@@ -43,5 +43,20 @@ code {
 }
 
 .card-table{
+  align-content: center;
   min-width: 50px;
+}
+
+.container{
+  background-image: url(https://images.unsplash.com/photo-1580706483913-b6ea7db483a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1237&q=80);
+}
+
+.user-builds{
+  
+  border-radius: 5px;
+  background-color: rgba(52,58,64,0.8) !important;
+}
+
+.build-table{
+  align-content: center;
 }
