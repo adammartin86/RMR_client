@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from './Home/Navbar';
 import Auth from './Auth/Auth';
 import BuildIndex from './Builds/BuildIndex';
-import Background from '../src/video/background.mp4';
+import Background from '../src/components/video/background.mp4';
 
 
 function App() {
@@ -32,16 +32,20 @@ function App() {
 
   return (
     <div className="container" >
-          <video autoPlay loop muted id="background"
+        <video autoPlay loop muted className="background-vid"
                 style={{
                     position: "absolute",
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover"
+                    left: "50%",
+                    top: "50%",
+                    objectFit: "cover",
+                    transform: "translate(-50%,-50%)"
+                    
                 }}>
                 <source src={Background} type="video/mp4" />
             </video>
-      <Sidebar clickLogout={clearToken} />
+      <Sidebar className="sidebar" clickLogout={clearToken} />
       {protectedViews()}
     </div>
   );

@@ -7,11 +7,11 @@ import Login from './Login';
 
 const Auth = (props) => {
     return (
-        <div>
+        <div style={{backgroundColor: "grey"}}>
             <Container >
-                <Row className="auth-container" style={{backgroundColor: "grey"}}>
+                <Row>
                     <Col md="6">
-                        <Tabs style={{color: "lightblue"}}>
+                        <Tabs style={{ color: "lightblue" }}>
                             <Tab style={{ color: "lightgreen" }} eventKey="signup" title="Sign Up">
                                 <Signup updateToken={props.updateToken} />
                             </Tab>

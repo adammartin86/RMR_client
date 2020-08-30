@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import APIURL from '../helpers/environment';
 
+
 const BuildTable = (props) => {
     const deleteBuild = (build) => {
         fetch(`${APIURL}/build/delete/${build.id}`, {
