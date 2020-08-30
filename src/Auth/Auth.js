@@ -4,23 +4,25 @@ import { Tab, Tabs } from 'react-bootstrap';
 import Signup from './Signup';
 import Login from './Login';
 
+
 const Auth = (props) => {
     return (
-
-        <Container className="auth-container">
-            <Row>
-                <Col md="6">
-                    <Tabs>
-                        <Tab eventKey="signup" title="Sign Up">
-                            <Signup updateToken={props.updateToken} />
-                        </Tab>
-                        <Tab eventKey="login" title="Login">
-                            <Login updateToken={props.updateToken} />
-                        </Tab>
-                    </Tabs>
-                </Col>
-            </Row>
-        </Container>
+        <div>
+            <Container >
+                <Row className="auth-container" style={{backgroundColor: "grey"}}>
+                    <Col md="6">
+                        <Tabs style={{color: "lightblue"}}>
+                            <Tab style={{ color: "lightgreen" }} eventKey="signup" title="Sign Up">
+                                <Signup updateToken={props.updateToken} />
+                            </Tab>
+                            <Tab style={{ color: "lightgreen" }} eventKey="login" title="Login">
+                                <Login updateToken={props.updateToken} />
+                            </Tab>
+                        </Tabs>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 }
 

@@ -38,7 +38,7 @@ code {
 
 .card{
   text-align: center;
-  width: 500px;
+  width: 525px;
   height: 700px;
 }
 
@@ -52,11 +52,13 @@ code {
 }
 
 .user-builds{
-  
   border-radius: 5px;
   background-color: rgba(52,58,64,0.8) !important;
+  
 }
 
-.build-table{
-  align-content: center;
+.auth-container{
+  background-color: rgba(52,58,64,0.8) !important;
+  font-family: 'OCR A Std', monospace;
 }
+

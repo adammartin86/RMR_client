@@ -47,7 +47,7 @@ const BuildIndex = (props) => {
 
 
     return (
-        <div>
+        <div className="build-table">
             <Container>
                 <Row>
                     <Col md="4"></Col>
@@ -55,6 +55,7 @@ const BuildIndex = (props) => {
                         
                         <BuildTable className="build-table" build={build} editUpdateBuild={editUpdateBuild} updateOn={updateOn} createOn={createOn} fetchBuilds={fetchBuilds} token={props.token} />
                     </Col>
+                    
                     
                     {updateActive ? <BuildEdit buildToUpdate={buildToUpdate} updateOff={updateOff} token={props.token} fetchBuilds={fetchBuilds} /> : <></>}
                     {createActive ? <BuildCreate createOff={createOff} token={props.token} fetchBuilds={fetchBuilds} /> : <></>}

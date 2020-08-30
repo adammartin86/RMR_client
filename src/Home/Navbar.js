@@ -18,7 +18,7 @@ const Sidebar = (props) => {
     return ( 
         <Navbar color="dark" light expand="md">
             <NavbarBrand className="NavBrand" style={{color: "lightgreen", width:"100%"}} href="/">Rate My Rig</NavbarBrand>
-            <NavbarToggler onClick={toggle}/>
+            <NavbarToggler style={{color: "lightgray"}} onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
