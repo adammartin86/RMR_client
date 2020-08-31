@@ -7,7 +7,7 @@ import Login from './Login';
 
 const Auth = (props) => {
     return (
-        <div style={{backgroundColor: "grey"}}>
+        <div className="auth-container" style={{backgroundColor: "grey"}}>
             <Container >
                 <Row>
                     <Col md="6">

@@ -34,14 +34,14 @@ function App() {
     <div className="container" >
         <video autoPlay loop muted className="background-vid"
                 style={{
-                    position: "absolute",
+                    position: "fixed",
                     width: "100%",
                     height: "100%",
                     left: "50%",
                     top: "50%",
                     objectFit: "cover",
-                    transform: "translate(-50%,-50%)"
-                    
+                    transform: "translate(-50%,-50%)",
+                    zIndex: "-1000"
                 }}>
                 <source src={Background} type="video/mp4" />
             </video>
