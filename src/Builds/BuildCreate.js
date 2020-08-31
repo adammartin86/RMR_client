@@ -40,6 +40,7 @@ const BuildCreate = (props) => {
             <Modal isOpen={true}>
                 <ModalHeader>Build your Rig!</ModalHeader>
                 <ModalBody>
+                    <Button onClick={props.createOff}>Close</Button>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="motherboard" />

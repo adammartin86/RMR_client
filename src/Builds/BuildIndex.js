@@ -50,7 +50,7 @@ const BuildIndex = (props) => {
         <div className="build-table">
             <Container>
                 <Row>
-                    <Col md="4"></Col>
+                    <Col md="3"></Col>
                     <Col md="6">
                         
                         <BuildTable className="build-table" build={build} editUpdateBuild={editUpdateBuild} updateOn={updateOn} createOn={createOn} fetchBuilds={fetchBuilds} token={props.token} />

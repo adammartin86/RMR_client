@@ -31,6 +31,7 @@ const BuildEdit = (props) => {
         <Modal isOpen={true}>
             <ModalHeader>Edit your Rig</ModalHeader>
             <ModalBody>
+                <Button onClick={props.updateOff}>Close</Button>
                 <Form onSubmit={buildUpdate}>
                     <FormGroup>
                         <Label htmlFor="motherboard">Edit Motherboard:</Label>
