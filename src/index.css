@@ -59,7 +59,14 @@ code {
 .auth-container{
   background-color: rgba(52,58,64,0.8) !important;
   font-family: 'OCR A Std', monospace;
+  padding-bottom: 5px;
+  border-radius: 5px;
 }
 
+.footer{
+  background-color: rgba(52,58,64,0.8) !important;
+  font-family: 'OCR A Std', monospace;
+  color: lightgreen;
+}
 
 
