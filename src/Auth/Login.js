@@ -31,7 +31,7 @@ const Login = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} minLength="5"/>
+                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} type="password" minLength="5"/>
                 </FormGroup>
                 <Button type="submit">Login</Button>
             </Form>

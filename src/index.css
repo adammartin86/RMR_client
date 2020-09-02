@@ -67,6 +67,11 @@ code {
   background-color: rgba(52,58,64,0.8) !important;
   font-family: 'OCR A Std', monospace;
   color: lightgreen;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
 }
 
 
