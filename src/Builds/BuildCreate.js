@@ -40,7 +40,7 @@ const BuildCreate = (props) => {
             <Modal isOpen={true}>
                 <ModalHeader>Build your Rig!</ModalHeader>
                 <ModalBody>
-                    <Button onClick={props.createOff}>Close</Button>
+                  
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="motherboard" />
@@ -66,7 +66,8 @@ const BuildCreate = (props) => {
                             <Label htmlFor="url" />
                             <Input placeholder="URL" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
                         </FormGroup>
-                        <Button type="submit">Build your rig!</Button>
+                        <Button color="primary" type="submit">Build your rig!</Button>
+                        <Button onClick={props.createOff}>Cancel</Button>
                     </Form>
                 </ModalBody>
             </Modal>

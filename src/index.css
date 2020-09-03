@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body{
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -63,15 +67,45 @@ code {
   border-radius: 5px;
 }
 
+.nav-tabs .nav-link.active {
+  color: #293E4B;
+}
+.nav-tabs .nav-link{
+  color: #ffffff;
+}
+
+.build-table .container {
+  padding: 20px 0px;
+}
+
+.build-table .container .user-builds{
+  padding: 20px;
+}
+
+.user-builds .card-table .card{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  padding-bottom: 0;
+}
+
+.card button, button.btn{
+  margin: 5px;
+}
+
 .footer{
   background-color: rgba(52,58,64,0.8) !important;
   font-family: 'OCR A Std', monospace;
   color: lightgreen;
   text-align: center;
   position: fixed;
+  top: auto;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  
+  width: auto;
+  height: 24px;
 }
 
 

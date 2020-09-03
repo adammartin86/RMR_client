@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, Button
@@ -20,14 +20,13 @@ const BuildTable = (props) => {
     const buildMapper = () => {
         return props.build.map((build) => {
             return (
-                <div classname="card-table">
+                <div class="card-table">
                     <Card top width="100%">
                         <CardImg top width="100%" top height="75%" src={build.url} alt="Card image cap" />
                         <CardBody>
-                            <CardTitle></CardTitle>
+                            <CardTitle>Owner: </CardTitle>
                             <CardText>Motherboard: {build.motherboard}, CPU: {build.cpu}, GPU: {build.gpu}, RAM: {build.ram}, Case: {build.pc_case}</CardText>
                             <Button color="info" onClick={() => { props.editUpdateBuild(build); props.updateOn() }} >Update specs</Button>
-                            &nbsp;
                          <Button color="danger" onClick={() => deleteBuild(build)}>Delete Rig</Button>
                         </CardBody>
                     </Card>

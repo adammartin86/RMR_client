@@ -11,7 +11,7 @@ const Auth = (props) => {
             <Container >
                 <Row>
                     <Col md="6">
-                        <Tabs style={{ color: "lightblue" }}>
+                        <Tabs>
                             <Tab style={{ color: "lightgreen" }} eventKey="signup" title="Sign Up">
                                 <Signup updateToken={props.updateToken} />
                             </Tab>

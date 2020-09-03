@@ -31,7 +31,7 @@ const BuildEdit = (props) => {
         <Modal isOpen={true}>
             <ModalHeader>Edit your Rig</ModalHeader>
             <ModalBody>
-                <Button onClick={props.updateOff}>Close</Button>
+                
                 <Form onSubmit={buildUpdate}>
                     <FormGroup>
                         <Label htmlFor="motherboard">Edit Motherboard:</Label>
@@ -57,7 +57,8 @@ const BuildEdit = (props) => {
                         <Label htmlFor="url">Edit Image</Label>
                         <Input name="url" value={editUrl} onChange={(e) => setUrl(e.target.value)}/>
                     </FormGroup>
-                    <Button type="submit">Update Specs!</Button>
+                    <Button color="primary" type="submit">Update Specs!</Button>
+                    <Button onClick={props.updateOff}>Cancel</Button>
                 </Form>
             </ModalBody>
         </Modal>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import BuildCreate from './BuildCreate';
 import BuildTable from './BuildTable';
 import BuildEdit from './BuildEdit';
@@ -49,17 +49,11 @@ const BuildIndex = (props) => {
     return (
         <div className="build-table">
             <Container>
-                <Row>
-                    <Col md="3"></Col>
-                    <Col md="6">
-                        
-                        <BuildTable className="build-table" build={build} editUpdateBuild={editUpdateBuild} updateOn={updateOn} createOn={createOn} fetchBuilds={fetchBuilds} token={props.token} />
-                    </Col>
-                    
-                    
-                    {updateActive ? <BuildEdit buildToUpdate={buildToUpdate} updateOff={updateOff} token={props.token} fetchBuilds={fetchBuilds} /> : <></>}
-                    {createActive ? <BuildCreate createOff={createOff} token={props.token} fetchBuilds={fetchBuilds} /> : <></>}
-                </Row>
+                <BuildTable className="build-table" build={build} editUpdateBuild={editUpdateBuild} updateOn={updateOn} createOn={createOn} fetchBuilds={fetchBuilds} token={props.token} />
+
+                {updateActive ? <BuildEdit buildToUpdate={buildToUpdate} updateOff={updateOff} token={props.token} fetchBuilds={fetchBuilds} /> : <></>}
+                {createActive ? <BuildCreate createOff={createOff} token={props.token} fetchBuilds={fetchBuilds} /> : <></>}
+
             </Container>
         </div>
     );
