@@ -24,7 +24,7 @@ const BuildTable = (props) => {
                     <Card top width="100%">
                         <CardImg top width="100%" top height="75%" src={build.url} alt="Card image cap" />
                         <CardBody>
-                            <CardTitle>Owner: </CardTitle>
+                            <CardTitle></CardTitle>
                             <CardText>Motherboard: {build.motherboard}, CPU: {build.cpu}, GPU: {build.gpu}, RAM: {build.ram}, Case: {build.pc_case}</CardText>
                             <Button color="info" onClick={() => { props.editUpdateBuild(build); props.updateOn() }} >Update specs</Button>
                          <Button color="danger" onClick={() => deleteBuild(build)}>Delete Rig</Button>
